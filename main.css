@@ -1,0 +1,226 @@
+:root {
+    --green: #00a65a;
+    --deep-green: #1e8959;
+    --red: #cc3c1f;
+    --light-red: #f56143;
+    --white: #FFFFFF;
+    --black: #000000;
+    --purple: #6610f2;
+    --blue: #007bff;
+    --light-blue: #0795df;
+    --gray: #7d7d7d;
+    --green-board: #014931;
+    --board-pitch: #C5A99B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.25;
+    border-radius: 5px;
+    border: 1px solid --black;
+    box-shadow: 2px 2px 2px --gray;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main-content side-bar"
+        "footer footer";
+    gap: 5px;
+    grid-template-columns: 66% 34%;
+    min-height: 100%;
+    height: 100vh;
+}
+
+.nav-bar {
+    display: flex;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    width: 100%;
+    background-color: var(--green);
+}
+
+.nav-bar img {
+    flex: none;
+    border-radius: 50%;
+}
+
+#nav-logo {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.nav-element {
+    flex: initial;
+    padding: 10px 15px;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+.nav-element:not(#nav-logo):hover {
+    background-color: var(--deep-green);
+    cursor: pointer;
+}
+
+#nav-logo:hover {
+    cursor: pointer;
+}
+
+.nav-element a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-element::after {
+    content: "";
+    clear: both;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+#main-content {
+    grid-area: main-content;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0px 17%;
+}
+
+.input-wrapper {
+    min-width: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.text-box-header {
+    font-size: 15pt;
+    padding: 5px 0px;
+    font-weight: bold;
+    align-self: flex-start;
+    flex: initial;
+}
+
+#latex-input {
+    flex: initial;
+    width: 90%;
+    height: 300px;
+    min-height: 100px;
+    max-height: 200px;
+    margin: 15px 0px;
+    font-size: 13pt;
+    line-height: 1.5;
+    background-color: var(--green-board);
+    border: 5px ridge var(--board-pitch);
+    color: var(--white);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#convert {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#convert-button {
+    margin: 15px 0px;
+    min-width: 100px;
+    min-height: 50px;
+    width: 200px;
+    height: 75px;
+    background-color: var(--green);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 18pt;
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 3px 3px 3px var(--gray);
+}
+
+#convert-button:hover {
+    background-color: var(--deep-green);
+    cursor: pointer;
+}
+
+#convert-button:active {
+    background-color: var(--light-red);
+    cursor: pointer;
+    box-shadow: 5px 5px 5px var(--gray);
+}
+
+.output-wrapper {
+    min-width: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.output {
+    width: 90%;
+    border: 3px dashed var(--blue);
+    flex: initial;
+    height: 100px;
+    margin: 15px 0px;
+}
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    margin-top: 50px;
+    min-height: 400px;
+}
+
+.footer-feature {
+    display: flex;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-flow: column wrap;
+    padding: 40px 50px;
+}
+
+#contact-logo {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 33px;
+    margin: 30px 0px;
+}
+
+#contact-logo>img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#list {
+    font-size: 15pt;
+    padding: 0px;
+    font-weight: 500;
+    list-style: none;
+}
+
+#list>li {
+    margin: 20px 0px
+}
